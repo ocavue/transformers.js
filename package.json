@@ -6,6 +6,7 @@
   "types": "./types/transformers.d.ts",
   "type": "module",
   "scripts": {
+    "ocavue-release": "webpack && npm run typegen && rm dist/*.wasm && git add -f dist && git add -f types && git add --all && git commit -m Release",
     "typegen": "tsc ./src/transformers.js --allowJs --declaration --emitDeclarationOnly --declarationMap --outDir types",
     "dev": "webpack serve --no-client-overlay",
     "build": "webpack && npm run typegen",
